@@ -1,0 +1,12 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: #12c2e9;
+  background: -webkit-radial-gradient(#12c2e9, #c471ed, #f64f59);
+  background: radial-gradient(#12c2e9, #c471ed, #f64f59);
+  transition: background 3s; }
+  body:hover {
+    background: radial-gradient(#f64f59, #12c2e9, #c471ed); }
+
+/*# sourceMappingURL=main.css.map */
