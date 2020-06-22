@@ -1,16 +1,37 @@
+@import "fonts";
+@import "colours";
+@import "troll";
+
 body {
-  width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
   margin: 0;
 
+  overflow-x: visible;
+  overflow-y: scroll;
 
+  font-family: Merriweather, sans-serif;
 
-  background: #12c2e9;
-  background: -webkit-radial-gradient(#12c2e9, #c471ed, #f64f59);
-  background: radial-gradient(#12c2e9, #c471ed, #f64f59);
-  transition: background 3s;
+  background-image: url(../img/anthill.svg), linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, $bgcGrass 90vh, $bgcGrass);
+  background-position: left calc((100vw - 62.5vh) / 2) bottom 10vh, top left;
+  background-size: auto 40vh, auto;
+  background-repeat: no-repeat;
 
-  &:hover {
-    background: radial-gradient(#f64f59, #12c2e9, #c471ed);
+  >header {
+    width: 100%;
+    height: 100vh;
+    padding: 0 0 50vh;
+    box-sizing: border-box;
+
+    display: grid;
+    text-align: center;
+
+    :first-child {
+      align-self: end;
+    }
+
+    :last-child {
+      align-self: start;
+    }
   }
 }

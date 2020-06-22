@@ -1,0 +1,79 @@
+@-webkit-keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotate-in-center {
+	-webkit-animation: rotate-in-center 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite alternate backwards;
+	        animation: rotate-in-center 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite alternate backwards;
+}
+
+.warningConstruction {
+  position: fixed;
+  top: 25vh;
+  left: calc((100vw - 50vh) / 2);
+
+  box-sizing: border-box;
+  width: 50vh;
+  height: 50vh;
+  border: 10px dashed red;
+  display: grid;
+  grid-template-rows: 90% 10%;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+
+  background-color: yellow;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  span {
+    font-style: italic;
+    font-family: "Comic Sans", "Comic Sans MS";
+  }
+
+  button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    box-sizing: border-box;
+    width: 70px;
+    height: 50px;
+    border: 5px solid grey;
+    border-radius: 5px;
+    font-size: 25px;
+
+    &:hover:not(:disabled), &:active, {
+      background-color: lightgrey;
+      outline: none;
+    }
+
+		&:disabled {
+			background-color: black;
+		}
+  }
+}

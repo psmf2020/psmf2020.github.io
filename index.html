@@ -2,12 +2,12 @@
 <html lang="cs" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Bizarní stránka</title>
+    <title>PŠMF 2020</title>
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <header>
-      <h1>Podzmní škola matematiky a fyziky 2020</h1>
+      <h1>Podzimní škola matematiky a fyziky 2020</h1>
       <h2>Tato akce nemá nic společného s MFF UK</h2>
     </header>
     <main>
@@ -33,5 +33,25 @@
       <p>Odkaz na náš mail</p>
       <p>Telefonní číslo odpovědného člověka</p>
     </footer>
+
+    <aside class="warningConstruction">
+      <img src="img/mravenec-zbijecka.gif" alt="Mravenec se zbíječkou">
+      <span>Omlouváme se, tato stránka je ve&nbsp;výstavbě</span>
+      <button onclick="zavriTrollOkno()">OK</button>
+    </aside>
   </body>
+
+  <script>
+    function zavriTrollOkno() {
+      Array.from(document.getElementsByClassName('warningConstruction')).forEach((item, i) => {
+        if(Math.random()>= 0.95) {
+          item.classList.add("rotate-in-center");
+          item.getElementsByTagName("BUTTON")[0].disabled = true;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+    }
+  </script>
 </html>
