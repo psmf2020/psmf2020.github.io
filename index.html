@@ -8,30 +8,61 @@
   <body>
     <header>
       <h1>Podzimní škola matematiky a fyziky 2020</h1>
-      <h2>Tato akce nemá nic společného s MFF UK</h2>
+      <h2>Královéhradecký kraj</h2>
+      <h2>28.10.&mdash;1.11.2020</h2>
     </header>
     <main>
-      <section>
-        <h3>Orgovací věci</h3>
-        <p>Kdy přijet</p>
-        <p>Kam přijet</p>
-        <p>Jak přijet</p>
-        <p>Proč přijet</p>
-        <p>Za kolik přijet</p>
+      <section class="infoContainer">
+        <h3>Informace o akci</h3>
+        <p>Podzimní škola matematiky a fyziky je pětidenní zážitková akce pro středoškoláky a&nbsp;vysokoškoláky.</p>
+        <p>Záloha 1&#8239;300&#8239;Kč</p>
       </section>
-      <section>
-        <h3>Přihláška</h3>
-        <p>Zde bude odkaz na AirTable (můžu splácnout asap).</p>
+      <section class="orgoveContainer">
+        <div class="org">
+          <img src="img/ant-illustration.svg" alt="Fotka Dalibora">
+          <p>Dalibor</p>
+          <p>O půjčování raději nechce ani&nbsp;slyšet.</p>
+        </div>
+        <div class="org">
+          <img src="img/ant-illustration.svg" alt="Fotka Jirky">
+          <p>Jirka</p>
+          <p>Nejraději by na&nbsp;Bazoši pořídil krytý přívěsný vozík.</p>
+        </div>
+        <div class="org">
+          <img src="img/ant-illustration.svg" alt="Fotka Dana">
+          <p>Dan</p>
+          <p>Když si nedáte pozor, zorganizuje i&nbsp;<a id="orglink" href="https://brnoc.cz">vaši akci!</a><br>
+          Peníze došly? Nevadí, půjčíme si!</p>
+        </div>
+        <div class="org">
+          <img src="img/ant-illustration.svg" alt="Fotka Pepči">
+          <p>Pepča</p>
+          <p>Kdyby docházely znělky, zeptejte se tady.</p>
+        </div>
       </section>
-      <section>
+      <section class="applyButtonContainer">
+        <!--<h3>Přihláška</h3>-->
+        <a href="https://airtable.com/shrB6PWSWZDuFvKv3" class="applyButton">
+          <span>Chci jet!</span>
+        </a>
+      </section>
+      <section class="ucastniciContainer">
         <h3>Účastníci</h3>
-        <p>Seznam potvrzených účastníků</p>
+        <!--<iframe src="http://perout.daniel.sweb.cz/psmf2020/ucastnici.html" frameborder="0" class="ucastniciList" sandbox></iframe>-->
+        <div id="ucastniciList"></div>
       </section>
     </main>
     <footer>
       <p>Vypracováno Imperátorským gangem &copy; 2020</p>
-      <p>Odkaz na náš mail</p>
+      <div class="disclaimer"><p>Tato akce není organizována, financována ani jinak podporována:</p>
+      <ul>
+        <li>Matemticko-fyzikální fakultou Univerzity Karlovy;</li>
+        <li>Paní Šilerovou, Ministryní Financí;</li>
+        <li>Pražským švazem malého fotbalu.</li>
+      </ul><p>Podobnost v názvu či obsazení je zcela náhodná.</p></div>
+      <div>V případě otázek či potíží pište na&nbsp;<a href="mailto:psmf2020@protonmail.com">psmf2020@protonmail.com</a></p>
       <p>Telefonní číslo odpovědného člověka</p>
+      Ikony vytvořeny uživatelem <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> na webu <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
     </footer>
 
     <aside class="warningConstruction">
@@ -41,7 +72,16 @@
     </aside>
   </body>
 
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script>
+    window.onload = function() {
+      if(window.location.href.includes("stoptroll")) {
+        Array.from(document.getElementsByClassName('warningConstruction')).forEach((item, i) => {
+          item.style.display = "none";
+        });
+      }
+    }
+
     function zavriTrollOkno() {
       Array.from(document.getElementsByClassName('warningConstruction')).forEach((item, i) => {
         if(Math.random()>= 0.95) {
@@ -53,5 +93,9 @@
       });
 
     }
+    $("#ucastniciList").load("http://perout.daniel.sweb.cz/psmf2020/ucastnici.html table");
+
+    let linky = ["https://brnoc.cz", "https://rnoc.cz"];
+    document.getElementById("orglink").href = linky[Math.floor(Math.random() * linky.length)];
   </script>
 </html>

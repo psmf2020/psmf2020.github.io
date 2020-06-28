@@ -12,26 +12,221 @@ body {
 
   font-family: Merriweather, sans-serif;
 
-  background-image: url(../img/anthill.svg), linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, $bgcGrass 90vh, $bgcGrass);
-  background-position: left calc((100vw - 62.5vh) / 2) bottom 10vh, top left;
-  background-size: auto 40vh, auto;
-  background-repeat: no-repeat;
+  /*background-image:
+    url(../img/anthill.svg),
+    linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, $bgcGrass 90vh, $bgcGrass),
+    linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial2 calc(15vh + 1%), $bgcEluvial2 60%, $bgcIluvial1 61%, $bgcIluvial2 80%, $bgcParent 81%, $bgcParent);
+  background-position:
+    left calc((100vw - 62.5vh) / 2) bottom 10vh,
+    top left,
+    top 100vh left;
+  background-size: auto 40vh, auto 100vh, auto;*/
+
+  background:
+    url(../img/anthill.svg)
+    left calc((100vw - 62.5vh) / 2) bottom 10vh / auto 40vh no-repeat,
+
+    url(../img/strom.svg)
+    right bottom 10vh / auto 40vh space no-repeat,
+
+    linear-gradient(to bottom, $transparent, $transparent 85vh, $bgcGrass 85vh, darken($bgcGrass, 5%) 90vh, $transparent 90vh, $transparent)
+    top left / auto no-repeat,
+
+    url(../img/strom.svg)
+    left 2vw bottom 15vh / auto 15vh repeat no-repeat,
+
+    linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, darken($bgcGrass, 5%) 90vh, darken($bgcGrass, 10%) 99%, $bgcHumus)
+    top left / auto 100vh no-repeat,
+
+    white;
+
+  >main {
+    //background: linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial2 calc(15vh + 1%), $bgcEluvial2 60%, $bgcIluvial1 61%, $bgcIluvial2 98%, $bgcParent 99%, $bgcParent)
+    //top left / cover
+
+    >* {
+      margin: 0 0 -1em;
+    }
+
+    >:nth-child(1) {
+      background: linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial1 calc(15vh + 1%), $bgcEluvial1 95%, $bgcEluvial2 99%, $bgcEluvial2);
+      color: $lightFont;
+      padding-bottom: 1em;
+    }
+
+    >:nth-child(2) {
+      background: $bgcEluvial2;
+    }
+
+    >:nth-child(3) {
+      background: linear-gradient($bgcEluvial2, $bgcEluvial2 49.5%, $bgcIluvial1 50.5%);
+    }
+
+    >:nth-child(4) {
+      background: linear-gradient($bgcIluvial1, $bgcIluvial2 90%, $bgcParent 94%, $bgcParent);
+    }
+  }
+
+  >footer {
+    background: $bgcParent;
+  }
 
   >header {
     width: 100%;
     height: 100vh;
-    padding: 0 0 50vh;
+    padding: 0 0 55vh;
     box-sizing: border-box;
 
     display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
     text-align: center;
 
-    :first-child {
+    >* {
       align-self: end;
     }
 
     :last-child {
       align-self: start;
     }
+  }
+
+  >main {
+    margin-bottom: -0.5em;
+    padding-bottom: 0.5em;
+
+    >section:first-child {
+      padding-top: 15vh;
+    }
+  }
+
+  >footer {
+    min-height: 30vh;
+
+    margin-top: -0.5em;
+    padding: 0.5em 2em 2em;
+  }
+}
+
+.applyButtonContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 2em;
+
+  a.applyButton {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    padding: 2.5em;
+    background-color: $AButDefault;
+    transition: all 0.2s;
+    //border: 0.4em solid $AButDefault;
+    border-radius: 1em;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: white;
+    font-family: 'Merriweather Sans', sans;
+
+    &:hover {
+      background-color: $AButHover;
+      //border-color: $AButHover;
+    }
+
+    &:active {
+      background-color: red;
+    }
+  }
+}
+
+section.infoContainer {
+  padding: 0.5em 2em;
+
+  h3 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+section.ucastniciContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  padding-bottom: 2em;
+}
+
+section.orgoveContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70vw;
+  grid-auto-rows: 70vw;
+  padding: 1em 15vw 0;
+  grid-gap: 10vw;
+  box-sizing: border-box;
+
+  justify-items: center;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 30vw 30vw;
+    grid-template-rows: 30vw 30vw;
+  }
+
+  .org {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-auto-rows: 70% 10% 20%;
+    grid-row-gap: 0.5em;
+
+    width: 100%;
+    height: 100%;
+
+    >* {
+      width: 100%;
+    }
+
+    p {
+      margin: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+
+      &:nth-of-type(1) {
+        text-align: center;
+      }
+
+      &:nth-of-type(2) {
+        text-align: justify;
+        hyphens: auto;
+        word-wrap: break-word;
+        align-self: start;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+
+      padding: 5%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+a {
+  color: $link;
+
+  &[href^="mailto"]::before {
+    content: "✉️";
+    padding-right: 0.2em;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  &:hover {
+    color: $linkHover;
   }
 }

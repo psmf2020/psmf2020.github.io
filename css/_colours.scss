@@ -1,2 +1,24 @@
+$transparent: rgba(white, 0);
+
+//// Background colours
+/* Front page */
 $bgcSky: #55B7F7;
-$bgcGrass: #006400;
+$bgcGrass: #51904F;
+
+/* Podzol */
+$bgcHumus: #3D2601;        //Organic surface level -> dark brown
+$bgcEluvial1: #57574A;
+$bgcEluvial2: #D0D0CA;      //Eluvial horizon -> ash gray
+$bgcIluvial1: #795D49;     //Iluvial horizon 1 -> dark to light brown
+$bgcIluvial2: #8F7961;     //Iluvial horizon 2
+$bgcParent: #BBAB8B;       //Parent surface ->
+
+//// Apply button colours
+$AButDefault: $bgcHumus;
+$AButHover: darken($bgcHumus, 4%);
+
+//// Font colours
+$baseFont: black;
+$link: #444444;
+$linkHover: #111111;
+$lightFont: rgba(white, 0.8);
