@@ -8,14 +8,15 @@
   <body>
     <header>
       <h1>Podzimní škola matematiky a fyziky 2020</h1>
-      <h2>Královéhradecký kraj</h2>
+      <h2>Vidoň, Královéhradecký kraj</h2>
       <h2>28.10.&mdash;1.11.2020</h2>
     </header>
     <main>
       <section class="infoContainer">
         <h3>Informace o akci</h3>
-        <p>Podzimní škola matematiky a fyziky je pětidenní zážitková akce pro středoškoláky a&nbsp;vysokoškoláky.</p>
-        <p>Záloha 1&#8239;300&#8239;Kč</p>
+        <p>Podzimní škola matematiky a&nbsp;fyziky 2020 je pětidenní srazově-zážitková akce pro&nbsp;středoškoláky a&nbsp;vysokoškoláky.</p>
+        <p>V průběhu akce je možné libovolně přijet či&nbsp;odjet, prosíme předběžně specifikujte v&nbsp;přihlášce. Doporučený sraz je 28.10.2020 v&nbsp;??:?? hodin na&nbsp;vlakové zastávce v&nbsp;Lázních Bělohrad.</p>
+        <p>Jednotná záloha pro&nbsp;všechny účastníky činí <strong class="tucne">1&#8239;300&#8239;Kč</strong>, po&nbsp;vyúčtování akce bude přeplatek navrácen. Finální cena je úměrná délce pobytu.</p>
       </section>
       <section class="orgoveContainer">
         <div class="org">
@@ -26,7 +27,7 @@
         <div class="org">
           <img src="img/ant-illustration.svg" alt="Fotka Jirky">
           <p>Jirka</p>
-          <p>Nejraději by na&nbsp;Bazoši pořídil krytý přívěsný vozík.</p>
+          <p>Nejraději by na&nbsp;Bazoši pořídil krytý přívěsný vozík. Nebo auto s&nbsp;tažnou koulí. Nemůže se rozhodnout.</p>
         </div>
         <div class="org">
           <img src="img/ant-illustration.svg" alt="Fotka Dana">
@@ -37,19 +38,17 @@
         <div class="org">
           <img src="img/ant-illustration.svg" alt="Fotka Pepči">
           <p>Pepča</p>
-          <p>Kdyby docházely znělky, zeptejte se tady.</p>
+          <p>Kdyby docházely znělky, orgové či&nbsp;dobrá nálada, zeptejte se tady.</p>
         </div>
       </section>
       <section class="applyButtonContainer">
-        <!--<h3>Přihláška</h3>-->
         <a href="https://airtable.com/shrB6PWSWZDuFvKv3" class="applyButton">
           <span>Chci jet!</span>
         </a>
       </section>
       <section class="ucastniciContainer">
         <h3>Účastníci</h3>
-        <!--<iframe src="http://perout.daniel.sweb.cz/psmf2020/ucastnici.html" frameborder="0" class="ucastniciList" sandbox></iframe>-->
-        <div id="ucastniciList"></div>
+        <div id="ucastniciList">Tabulka se načítá</div>
       </section>
     </main>
     <footer>
@@ -72,7 +71,7 @@
     </aside>
   </body>
 
-  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script>
     window.onload = function() {
       if(window.location.href.includes("stoptroll")) {
@@ -93,7 +92,7 @@
       });
 
     }
-    $("#ucastniciList").load("http://perout.daniel.sweb.cz/psmf2020/ucastnici.html table");
+    $("#ucastniciList").load("https://danovo-imperium.000webhostapp.com/psmf2020/ucastnici.html table");
 
     let linky = ["https://brnoc.cz", "https://rnoc.cz"];
     document.getElementById("orglink").href = linky[Math.floor(Math.random() * linky.length)];
