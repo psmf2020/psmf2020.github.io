@@ -12,6 +12,25 @@ body {
   overflow-y: scroll;
 
   font-family: Merriweather, sans-serif;
+  font-size: initial;
+
+  @media
+  (min-resolution: 1.5dppx) and (orientation: landscape),
+  (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {
+    font-size: 14pt;
+  }
+
+  @media
+  (min-resolution: 1.5dppx) and (orientation: portrait),
+  (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {
+    font-size: 24pt;
+  }
+
+  @media
+  (min-resolution: 2dppx) and (orientation: portrait),
+  (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    font-size: 30pt;
+  }
 
   /*background-image:
     url(../img/anthill.svg),
@@ -173,9 +192,11 @@ section.orgoveContainer {
   justify-items: center;
   align-items: center;
 
-  @media (min-width: 600px) {
+  @media
+    (min-width: 600px) and (max-resolution: 1dppx),
+    screen and (orientation: landscape) {
     grid-template-columns: 30vw 30vw;
-    grid-template-rows: 35vw 35vw;
+    grid-template-rows: 35vw 35vw 35vw;
   }
 
   .org {
