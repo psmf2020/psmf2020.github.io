@@ -274,3 +274,10 @@ p {
 strong.tucne {
   font-weight: 900;
 }
+
+.buttonDisabled {
+  &:hover {
+    background-color: gray !important;
+    cursor: not-allowed;
+  }
+}
