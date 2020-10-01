@@ -82,3 +82,15 @@ div.disclaimer {
 	font-size: 80%;
 	font-weight: 200;
 }
+
+@-webkit-keyframes blinker {
+  from { color: red; font-size: 3em; }
+  to { color: $bgcSky; }
+}
+
+.zrusenaAkceHeading {
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(.23,.12,.5,1);
+  -webkit-animation-duration: 1.7s;
+}
