@@ -2,282 +2,247 @@
 @import "colours";
 @import "troll";
 @import "ucastnici";
+@import "orgove";
+@import "constants";
 
 body {
-  max-height: 100vh;
-  max-width: 100vw;
-  margin: 0;
+	max-height: 100vh;
+	max-width: 100vw;
+	margin: 0;
 
-  overflow-x: visible;
-  overflow-y: scroll;
+	overflow-x: visible;
+	overflow-y: scroll;
 
-  font-family: Merriweather, sans-serif;
-  font-size: initial;
+	font-family: Merriweather, sans-serif;
+	font-size: initial;
 
-  @media
-  (min-resolution: 1.5dppx) and (orientation: landscape),
-  (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {
-    font-size: 14pt;
-  }
+	@media
+	(min-resolution: 1.5dppx) and (orientation: landscape),
+	(-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {
+		font-size: 14pt;
+	}
 
-  @media
-  (min-resolution: 1.5dppx) and (orientation: portrait),
-  (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {
-    font-size: 24pt;
-  }
+	@media
+	(min-resolution: 1.5dppx) and (orientation: portrait),
+	(-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {
+		font-size: 24pt;
+	}
 
-  @media
-  (min-resolution: 2dppx) and (orientation: portrait),
-  (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-    font-size: 30pt;
-  }
+	@media
+	(min-resolution: 2dppx) and (orientation: portrait),
+	(-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+		font-size: 30pt;
+	}
 
-  /*background-image:
-    url(../img/anthill.svg),
-    linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, $bgcGrass 90vh, $bgcGrass),
-    linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial2 calc(15vh + 1%), $bgcEluvial2 60%, $bgcIluvial1 61%, $bgcIluvial2 80%, $bgcParent 81%, $bgcParent);
-  background-position:
-    left calc((100vw - 62.5vh) / 2) bottom 10vh,
-    top left,
-    top 100vh left;
-  background-size: auto 40vh, auto 100vh, auto;*/
+	/*background-image:
+		url(../img/anthill.svg),
+		linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, $bgcGrass 90vh, $bgcGrass),
+		linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial2 calc(15vh + 1%), $bgcEluvial2 60%, $bgcIluvial1 61%, $bgcIluvial2 80%, $bgcParent 81%, $bgcParent);
+	background-position:
+		left calc((100vw - 62.5vh) / 2) bottom 10vh,
+		top left,
+		top 100vh left;
+	background-size: auto 40vh, auto 100vh, auto;*/
 
-  background:
-    url(../img/anthill.svg)
-    left calc((100vw - 62.5vh) / 2) bottom 10vh / auto 40vh no-repeat,
+	background:
+		url(../img/anthill.svg)
+		left calc((100vw - 62.5vh) / 2) bottom 10vh / auto 40vh no-repeat,
 
-    url(../img/strom.svg)
-    right bottom 10vh / auto 40vh space no-repeat,
+		url(../img/strom.svg)
+		right bottom 10vh / auto 40vh space no-repeat,
 
-    linear-gradient(to bottom, $transparent, $transparent 85vh, $bgcGrass 85vh, darken($bgcGrass, 5%) 90vh, $transparent 90vh, $transparent)
-    top left / auto no-repeat,
+		linear-gradient(to bottom, $transparent, $transparent 85vh, $bgcGrass 85vh, darken($bgcGrass, 5%) 90vh, $transparent 90vh, $transparent)
+		top left / auto no-repeat,
 
-    url(../img/strom.svg)
-    left 2vw bottom 15vh / auto 15vh repeat no-repeat,
+		url(../img/strom.svg)
+		left 2vw bottom 15vh / auto 15vh repeat no-repeat,
 
-    linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, darken($bgcGrass, 5%) 90vh, darken($bgcGrass, 10%) 99%, $bgcHumus)
-    top left / auto 100vh no-repeat,
+		linear-gradient(to bottom, $bgcSky, $bgcSky 90vh, darken($bgcGrass, 5%) 90vh, darken($bgcGrass, 10%) 99%, $bgcHumus)
+		top left / auto 100vh no-repeat,
 
-    white;
+		white;
 
-  >main {
-    //background: linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial2 calc(15vh + 1%), $bgcEluvial2 60%, $bgcIluvial1 61%, $bgcIluvial2 98%, $bgcParent 99%, $bgcParent)
-    //top left / cover
+	>main {
+		//background: linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial2 calc(15vh + 1%), $bgcEluvial2 60%, $bgcIluvial1 61%, $bgcIluvial2 98%, $bgcParent 99%, $bgcParent)
+		//top left / cover
 
-    >* {
-      margin: 0 0 -1em;
-    }
+		>* {
+			margin: 0 0 -1em;
+		}
 
-    >:nth-child(1) {
-      background: linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial1 calc(15vh + 1%), $bgcEluvial1 95%, $bgcEluvial2 99%, $bgcEluvial2);
-      color: $lightFont;
-      padding-bottom: 1em;
-    }
+		>:nth-child(1) {
+			background: linear-gradient(to bottom, $bgcHumus, $bgcHumus 15vh, $bgcEluvial1 calc(15vh + 1%), $bgcEluvial1 95%, $bgcEluvial2 99%, $bgcEluvial2);
+			color: $lightFont;
+			padding-bottom: 1em;
+		}
 
-    >:nth-child(2) {
-      background: $bgcEluvial2;
-    }
+		>:nth-child(2) {
+			background: $bgcEluvial2;
+		}
 
-    >:nth-child(3) {
-      background: linear-gradient($bgcEluvial2, $bgcEluvial2 49.5%, $bgcIluvial1 50.5%);
-    }
+		>:nth-child(3) {
+			background: linear-gradient($bgcEluvial2, $bgcEluvial2 49.5%, $bgcIluvial1 50.5%);
+		}
 
-    >:nth-child(4) {
-      background: linear-gradient($bgcIluvial1, $bgcIluvial2 90%, $bgcParent 94%, $bgcParent);
-    }
-  }
+		>:nth-child(4) {
+			background: linear-gradient($bgcIluvial1, $bgcIluvial2 90%, $bgcParent 94%, $bgcParent);
+		}
+	}
 
-  >footer {
-    background: $bgcParent;
-  }
+	>footer {
+		background: $bgcParent;
+	}
 
-  >header {
-    width: 100%;
-    height: 100vh;
-    padding: 0 0 55vh;
-    box-sizing: border-box;
+	>header {
+		$margingap:	0.8em;
+		width: 100%;
+		height: 100vh;
+		padding: $margingap $margingap 55vh;
+		box-sizing: border-box;
 
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
-    text-align: center;
+		display: grid;
+		grid-template-rows: 2fr 1fr 1fr;
+		text-align: center;
+		gap:		$margingap;
 
-    >* {
-      align-self: end;
-    }
+		>* {
+			align-self: end;
+			margin: 0;
+			max-width: 500px;
+			justify-self: center;
+		}
 
-    :last-child {
-      align-self: start;
-    }
-  }
+		:last-child {
+			align-self: start;
+		}
+	}
 
-  >main {
-    margin-bottom: -0.5em;
-    padding-bottom: 0.5em;
+	>main {
+		margin-bottom: -0.5em;
+		padding-bottom: 0.5em;
 
-    >section:first-child {
-      padding-top: 15vh;
-    }
-  }
+		>section:first-child {
+			padding-top: 15vh;
+		}
+	}
 
-  >footer {
-    min-height: 30vh;
+	>footer {
+		min-height: 30vh;
 
-    margin-top: -0.5em;
-    padding: 0.5em 2em 2em;
-  }
+		margin-top: -0.5em;
+	}
+
+	//Maximální šířka contentu
+	>main>section {
+		display: grid;
+		&>* {
+			max-width: $maxContentWidth;
+			justify-self: center;
+		}
+	}
+
+	>footer {
+		display:				grid;
+		box-sizing:				border-box;
+		padding: 				0.5em unquote("max(2em, calc((100vw - " + $maxContentWidth + ") / 2))") 2em;
+		grid-template-columns:	fit-content(calc(100vw - 2em * 2));
+		justify-content: 		center;
+
+		&>* {
+			width: 		100%;
+		}
+	}
 }
 
 .applyButtonContainer {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  padding: 2em;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	padding: 2em;
 
-  a.applyButton {
-    display: grid;
-    align-items: center;
-    justify-items: center;
+	a.applyButton {
+		display: grid;
+		align-items: center;
+		justify-items: center;
 
-    padding: 2.5em;
-    background-color: $AButDefault;
-    transition: all 0.2s;
-    //border: 0.4em solid $AButDefault;
-    border-radius: 1em;
+		padding: 2.5em;
+		background-color: $AButDefault;
+		transition: all 0.2s;
+		//border: 0.4em solid $AButDefault;
+		border-radius: 1em;
 
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: white;
-    font-family: 'Merriweather Sans', sans;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: white;
+		font-family: 'Merriweather Sans', sans;
 
-    &:hover {
-      background-color: $AButHover;
-      //border-color: $AButHover;
-    }
+		&:hover {
+			background-color: $AButHover;
+			//border-color: $AButHover;
+		}
 
-    &:active {
-      background-color: red;
-    }
-  }
+		&:active {
+			background-color: red;
+		}
+	}
 }
 
 section.infoContainer {
-  padding: 0.5em 2em;
+	padding: 0.5em 2em;
 
-  p {
-    font-style: italic;
-    text-align: justify;
-    hyphens: auto;
-    word-wrap: break-word;
-  }
+	p {
+		font-style: italic;
+		text-align: justify;
+		hyphens: auto;
+		word-wrap: break-word;
+	}
 }
 
 section.ucastniciContainer {
-  display: grid;
-  align-items: center;
-  justify-items: center;
+	display: grid;
+	align-items: center;
+	justify-items: center;
 
-  padding-bottom: 2em;
-}
-
-section.orgoveContainer {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 70vw;
-  grid-auto-rows: 70vw;
-  padding: 1em 15vw 0;
-  grid-gap: 5vw 10vw;
-  box-sizing: border-box;
-
-  justify-items: center;
-  align-items: center;
-
-  @media
-    (min-width: 600px) and (max-resolution: 1dppx),
-    screen and (orientation: landscape) {
-    grid-template-columns: 30vw 30vw;
-    grid-template-rows: 35vw 35vw 35vw;
-  }
-
-  .org {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    grid-template-rows: 65% 10% minmax(3em, 25%);
-    grid-row-gap: 0.5em;
-
-    width: 100%;
-    height: 100%;
-
-    >* {
-      width: 100%;
-    }
-
-    p {
-      margin: 0;
-      margin-block-start: 0;
-      margin-block-end: 0;
-
-      &:nth-of-type(1) {
-        text-align: center;
-        font-weight: normal;
-      }
-
-      &:nth-of-type(2) {
-        text-align: justify;
-        hyphens: auto;
-        word-wrap: break-word;
-        align-self: start;
-        font-size: 0.9em;
-        overflow-y: scroll;
-      }
-    }
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-
-      padding: 5%;
-      box-sizing: border-box;
-    }
-  }
+	padding-bottom: 2em;
 }
 
 a {
-  color: $link;
+	color: $link;
 
-  &[href^="mailto"]::before {
-    content: "✉️";
-    padding-right: 0.2em;
-    text-decoration: none;
-    display: inline-block;
-  }
+	&[href^="mailto"]::before {
+		content: "✉️";
+		padding-right: 0.2em;
+		text-decoration: none;
+		display: inline-block;
+	}
 
-  &:hover {
-    color: $linkHover;
-  }
+	&:hover {
+		color: $linkHover;
+	}
 }
 
 h3 {
-  width: 100%;
-  text-align: center;
-  font-weight: 200;
-  letter-spacing: 0.2em;
+	width: 100%;
+	text-align: center;
+	font-weight: 200;
+	letter-spacing: 0.2em;
 
-  font-family: "Merriweather Sans", sans-serif;
+	font-family: "Merriweather Sans", sans-serif;
 }
 
 p {
-  font-weight: 200;
+	font-weight:	200;
+	//font-size:		1rem;
 }
 
 strong.tucne {
-  font-weight: 900;
+	font-weight: 900;
 }
 
 .buttonDisabled {
-  &:hover {
-    background-color: gray !important;
-    cursor: not-allowed;
-  }
+	&:hover {
+		background-color: gray !important;
+		cursor: not-allowed;
+	}
 }
