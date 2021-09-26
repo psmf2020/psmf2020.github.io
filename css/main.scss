@@ -183,7 +183,9 @@ body {
 		}
 
 		&:active {
-			background-color: red;
+			background-color: $AButHover;
+			outline: 0.5em solid $AButHover;
+			outline-offset: 0.25em;
 		}
 	}
 }
